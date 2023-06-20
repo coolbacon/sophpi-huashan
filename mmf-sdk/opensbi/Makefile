@@ -157,7 +157,8 @@ ifndef PLATFORM_RISCV_ABI
 endif
 ifndef PLATFORM_RISCV_ISA
   ifneq ($(PLATFORM_RISCV_TOOLCHAIN_DEFAULT), 1)
-    PLATFORM_RISCV_ISA = rv$(PLATFORM_RISCV_XLEN)imafdc
+    #PLATFORM_RISCV_ISA = rv$(PLATFORM_RISCV_XLEN)imafdc
+	PLATFORM_RISCV_ISA = rv$(PLATFORM_RISCV_XLEN)imafd
   else
     PLATFORM_RISCV_ISA = $(OPENSBI_CC_ISA)
   endif
@@ -319,7 +320,7 @@ targets-y += $(firmware-bins-path-y)
 # Default rule "make" should always be first rule
 .PHONY: all
 all: $(targets-y)
-
+	@echo "---------->${PLATFORM_RISCV_ISA}"
 # Preserve all intermediate files
 .SECONDARY:
 

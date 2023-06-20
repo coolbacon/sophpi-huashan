@@ -14,7 +14,7 @@ firmware-asflags-y +=
 firmware-ldflags-y +=
 
 ifndef FW_PIC
-FW_PIC := y
+#FW_PIC := y
 endif
 
 ifeq ($(FW_PIC),y)

@@ -383,6 +383,9 @@ retry_from_flash:
 
 	switch_rtc_mode_2nd_stage();
 
+	NOTICE("Wait for Debug.\n");
+	while (1);
+
 	if (monitor_entry) {
 		NOTICE("Jump to monitor at 0x%lx.\n", monitor_entry);
 		jump_to_monitor(monitor_entry, loader_2nd_entry);

@@ -223,6 +223,8 @@ static void __noreturn init_coldboot(struct sbi_scratch *scratch, u32 hartid)
 	unsigned long *init_count;
 	const struct sbi_platform *plat = sbi_platform_ptr(scratch);
 
+	//scratch->next_mode = PRV_M;	
+
 	/* Note: This has to be first thing in coldboot init sequence */
 	rc = sbi_scratch_init(scratch);
 	if (rc)
